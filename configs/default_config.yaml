@@ -27,7 +27,7 @@ BETA2: 0.999                   # adam optimizer beta2
 
 USE_EMA: True                 # whether to use exponential moving average (EMA)
 EMA_DECAY: 0.999               # decay weight of EMA
-EMA_START: 1000                # which iteration to start EMA
+EMA_START: 100                # which iteration to start EMA
 
 
 # Loss Configuration
@@ -46,13 +46,13 @@ SAMPLE_PATH: ./checkpoints/samples    # training samples path
 DIFF_AUG: color,translation    # differentiable augmentation [color, translation, cutout]
 
 BATCH_SIZE: 40                 # batch size
-TOTAL_ITERS: 100            # number of training iterations
+TOTAL_ITERS: 200            # number of training iterations
 DIS_ITERS: 1                   # training steps for discriminator per iteration
 
-LOG_INTERVAL: 1000             # how many iterations to wait before logging training status
-SAVE_START: 10000              # which epoch to start saving models
-SAVE_INTERVAL: 1000            # how many epochs to wait before saving models
-VIS_INTERVAL: 1000             # how many epochs to wait before visualization
+LOG_INTERVAL: 20             # how many iterations to wait before logging training status
+SAVE_START: 50              # which epoch to start saving models
+SAVE_INTERVAL: 100            # how many epochs to wait before saving models
+VIS_INTERVAL: 100             # how many epochs to wait before visualization
 VIS_NUM: 16                    # how many generated cases per category for visualization
 
 PRETRAIN_GEN:                  # which pretrained generator to load
@@ -65,7 +65,7 @@ TEST_PATH: ./test_results      # testng generated image path
 SAMPLE_NUM: 100                # number of generated images for each category
 EVAL_METRICS: True             # compute evaluation metrics [True | False]
 FID_NUM: 10000                 # how many samples for FID evaluation in each category
-FID_BATCH: 64                  # batch size for FID evaluation
+FID_BATCH: 40                  # batch size for FID evaluation
 
 
 # Device
