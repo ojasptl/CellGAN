@@ -46,7 +46,7 @@ SAMPLE_PATH: ./checkpoints/samples    # training samples path
 DIFF_AUG: color,translation    # differentiable augmentation [color, translation, cutout]
 
 BATCH_SIZE: 40                 # batch size
-TOTAL_ITERS: 200            # number of training iterations
+TOTAL_ITERS: 510            # number of training iterations
 DIS_ITERS: 1                   # training steps for discriminator per iteration
 
 LOG_INTERVAL: 20             # how many iterations to wait before logging training status
@@ -60,7 +60,7 @@ PRETRAIN_DIS:                  # which discriminator to load
 
 
 # Testing Settings
-MODEL:                         # which generator to test
+MODEL: 500                        # which generator to test
 TEST_PATH: ./test_results      # testng generated image path
 SAMPLE_NUM: 100                # number of generated images for each category
 EVAL_METRICS: True             # compute evaluation metrics [True | False]
