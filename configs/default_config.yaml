@@ -45,8 +45,8 @@ SAMPLE_PATH: ./checkpoints/samples    # training samples path
 # Training Settings
 DIFF_AUG: color,translation    # differentiable augmentation [color, translation, cutout]
 
-BATCH_SIZE: 32                 # batch size
-TOTAL_ITERS: 100000            # number of training iterations
+BATCH_SIZE: 40                 # batch size
+TOTAL_ITERS: 100            # number of training iterations
 DIS_ITERS: 1                   # training steps for discriminator per iteration
 
 LOG_INTERVAL: 1000             # how many iterations to wait before logging training status
