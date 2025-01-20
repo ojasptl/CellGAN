@@ -70,4 +70,4 @@ FID_BATCH: 40                  # batch size for FID evaluation
 
 # Device
 MANUAL_SEED: 2077              # manual random seed for reproducibility
-GPU: [0]                       # gpu ids
+GPU: [0, 1]                       # gpu ids
