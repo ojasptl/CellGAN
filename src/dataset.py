@@ -13,11 +13,11 @@ cv2.ocl.setUseOpenCL(False)
 
 # One-hot class labels
 categories = {
-    'NILM':   [1, 0, 0, 0, 0],
-    'ASC_US': [0, 1, 0, 0, 0],
-    'LSIL':   [0, 0, 1, 0, 0],
-    'ASC_H':  [0, 0, 0, 1, 0],
-    'HSIL':   [0, 0, 0, 0, 1],
+    'im_Dyskeratotic':   [1, 0, 0, 0, 0],
+    'im_Koilocytotic': [0, 1, 0, 0, 0],
+    'im_Parabasal':   [0, 0, 1, 0, 0],
+    'im_Metaplastic':  [0, 0, 0, 1, 0],
+    'im_Superficial-Intermediate':   [0, 0, 0, 0, 1],
 }
 
 
