@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-
+from src import EmbeddingNetwork, SN_Linear
 from .utils import *
 from .dataset import CellDataset, categories, InfiniteSamplerWrapper
 from .loss import GANLoss, R1_loss
@@ -18,11 +18,15 @@ def train_model(config):
 
     # Build networks
     netG = create_generator(config).cuda()
+    netG.cls_map_net = EmbeddingNetwork(4, config.COND_SIZE, config.MAP_LAYERS)
     netD = create_discriminator(config).cuda()
+    netD.to_cls_embed = SN_Linear(4, netD.nfc_member[8], bias=False)
 
     # Optimizers
-    optimizer_G = create_optimizer(config, netG, config.LR_G)
-    optimizer_D = create_optimizer(config, netD, config.LR_D)
+    # optimizer_G = create_optimizer(config, netG, config.LR_G)
+    # optimizer_D = create_optimizer(config, netD, config.LR_D)
+    optimizer_G = torch.optim.Adam(netG.parameters(), lr=config.LR_G)
+    optimizer_D = torch.optim.Adam(netD.parameters(), lr=config.LR_D)
 
     # Loss functions
     GAN_criterion = GANLoss(gan_mode=config.GAN_MODE).cuda()

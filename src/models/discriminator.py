@@ -25,7 +25,7 @@ class Discriminator(nn.Module):
         self.down_16 = DownBlockComp(nfc[32], nfc[16])
         self.down_8 = DownBlockComp(nfc[16], nfc[8])
         self.to_logits = SN_Conv2d(nfc[8], 1, 1, 1, 0, bias=False)
-
+        self.nfc_member = nfc
         # Projection head
         self.to_cls_embed = SN_Linear(n_class, nfc[8], bias=False)
 
