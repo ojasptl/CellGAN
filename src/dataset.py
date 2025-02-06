@@ -52,7 +52,7 @@ class CellDataset(Dataset):
 
         # Transformation
         transform_list = []
-        transform_list.append(transforms.Resize((256, 256))
+        transform_list.append(transforms.Resize((256, 256)))
         if augment:
             transform_list.append(transforms.RandomHorizontalFlip())
             transform_list.append(transforms.RandomVerticalFlip())
