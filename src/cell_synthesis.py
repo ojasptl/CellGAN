@@ -17,7 +17,7 @@ def train_model(config):
     # ----------------------------------------
 
     # Build networks
-    netG = create_generator(config).cuda()
+    netG = create_generator(config, config.PRETRAIN_GEN).cuda()
     netG.cls_map_net = EmbeddingNetwork(4, config.COND_SIZE, config.MAP_LAYERS)
     netD = create_discriminator(config).cuda()
     netD.to_cls_embed = SN_Linear(4, netD.nfc_member[8], bias=False)
