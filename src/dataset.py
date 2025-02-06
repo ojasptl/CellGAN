@@ -12,12 +12,18 @@ cv2.ocl.setUseOpenCL(False)
 
 
 # One-hot class labels
+# categories = {
+#     'Dyskeratotic':   [1, 0, 0, 0, 0],
+#     'Koilocytotic': [0, 1, 0, 0, 0],
+#     'Metaplastic':   [0, 0, 1, 0, 0],
+#     'Parabasal':  [0, 0, 0, 1, 0],
+#     'Superficial-Intermediate':   [0, 0, 0, 0, 1],
+# }
 categories = {
-    'Dyskeratotic':   [1, 0, 0, 0, 0],
-    'Koilocytotic': [0, 1, 0, 0, 0],
-    'Metaplastic':   [0, 0, 1, 0, 0],
-    'Parabasal':  [0, 0, 0, 1, 0],
-    'Superficial-Intermediate':   [0, 0, 0, 0, 1],
+    "High squamous intra-epithelial lesion": [1, 0, 0, 0],
+    "Low squamous intra-epithelial lesion": [0, 1, 0, 0],
+    "Negative for Intraepithelial malignancy": [0, 0, 1, 0],
+    "Squamous cell carcinoma": [0, 0, 0, 1]
 }
 
 
