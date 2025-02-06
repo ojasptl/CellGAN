@@ -9,7 +9,13 @@ from torchvision.utils import make_grid, save_image
 from .models.modules import weights_init
 from .models.generator import Generator
 from .models.discriminator import Discriminator
+from pathlib import Path
+import os
 
+# Get the current script's directory (folder1)
+current_dir = Path(__file__).parent
+# Get the absolute path of the sister folder (folder2)
+sister_folder_path = current_dir.parent / "checkpoints"
 
 # ----------------------------------------
 #             Reproducibility
@@ -115,7 +121,7 @@ def create_generator(config, model_path=None):
 
     # Initialize the networks
     if model_path is not None:
-        generator = load_model(generator, model_path)
+        generator = load_model(generator, os.path.join(sister_folder_path, model_path))
         print(f'Load pre-trained generator from {model_path}')
 
     else:
